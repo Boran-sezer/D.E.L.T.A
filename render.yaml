@@ -1,9 +1,11 @@
 services:
   - type: web
     name: delta-assistant
-    runtime: docker
+    runtime: python
     plan: free
     region: frankfurt
+    buildCommand: bash build.sh
+    startCommand: bash start.sh
     envVars:
       - key: PORT
         value: 10000
